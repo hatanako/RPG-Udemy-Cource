@@ -11,6 +11,8 @@ public class PlayerMoveState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
+
+        player.SetVelocity(xInput * player.moveSpeed, rb.velocity.y);
     }
 
     public override void Exit()
