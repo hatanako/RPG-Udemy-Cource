@@ -5,12 +5,16 @@ using UnityEngine;
 public class Enemy : Entity
 {
     
-    public EnemyStateMachine stateMachine { get; private set; }
-    public EnemyState currentState { get { return stateMachine.currentState; } }
+    [SerializeField] protected LayerMask whatIsPlayer;
 
+    [Header("Move info")]
     [SerializeField] public float idleTime;
 
-    [SerializeField] private EnemyState startState;
+    [Header("Attack info")]
+    [SerializeField] public float attackDistance;
+    [SerializeField] protected Transform attackCheck; 
+    public EnemyStateMachine stateMachine { get; private set; }
+
     protected override void Awake()
     {
         base.Awake();
@@ -21,11 +25,20 @@ public class Enemy : Entity
     protected override void Update()
     {
         base.Update();
-        currentState.Update();
+        stateMachine.currentState.Update();
     }
 
     public void ChangeState(EnemyState newState)
     {
         stateMachine.ChangeState(newState);
+    }
+
+    public virtual RaycastHit2D IsPlayerDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, 50, whatIsPlayer);
+
+    protected override void OnDrawGizmos()
+    {
+        base.OnDrawGizmos();
+        Gizmos.color = Color.red;
+        DrawLine(attackCheck, attackDistance, true);
     }
 }

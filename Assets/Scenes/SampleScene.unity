@@ -86827,7 +86827,7 @@ GameObject:
   - component: {fileID: 638672637}
   - component: {fileID: 638672638}
   - component: {fileID: 638672639}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Animator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87051,7 +87051,7 @@ GameObject:
   - component: {fileID: 1029614379}
   - component: {fileID: 1029614381}
   - component: {fileID: 1029614380}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy_Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87067,13 +87067,14 @@ Transform:
   m_GameObject: {fileID: 1029614377}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.15, y: 1.95, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 29.15, y: 2.64, z: 0}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 638672637}
   - {fileID: 2045877355}
   - {fileID: 1880372999}
+  - {fileID: 1578050430}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1029614379
@@ -87097,7 +87098,12 @@ MonoBehaviour:
     m_Bits: 8
   moveSpeed: 1.5
   jumpForce: 0
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 64
   idleTime: 2
+  attackDistance: 1.5
+  attackCheck: {fileID: 1578050430}
 --- !u!61 &1029614380
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -87225,7 +87231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1210789352}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87259,7 +87265,7 @@ GameObject:
   - component: {fileID: 1219235534}
   - component: {fileID: 1219235537}
   - component: {fileID: 1219235536}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87473,7 +87479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb9a25dd43d04d49a2dce2b680c5d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallexEffect: 0
+  parallexEffect: 1.2
 --- !u!1 &1518613492
 GameObject:
   m_ObjectHideFlags: 0
@@ -87545,6 +87551,37 @@ Transform:
   m_Children:
   - {fileID: 2036865257}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1578050429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1578050430}
+  m_Layer: 7
+  m_Name: AttackCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1578050430
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578050429}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1029614378}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1602163784
 GameObject:
@@ -87645,7 +87682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb9a25dd43d04d49a2dce2b680c5d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallexEffect: 0
+  parallexEffect: 0.8
 --- !u!1 &1696223679
 GameObject:
   m_ObjectHideFlags: 0
@@ -87739,7 +87776,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1880372999}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87755,7 +87792,7 @@ Transform:
   m_GameObject: {fileID: 1880372998}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.192, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -87770,7 +87807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1939249304}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87889,7 +87926,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2045877355}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87923,7 +87960,7 @@ GameObject:
   - component: {fileID: 2063898487}
   - component: {fileID: 2063898486}
   - component: {fileID: 2063898488}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Animator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
